@@ -1,0 +1,25 @@
+{
+	"intro": {
+		"title": "Bem vindo ao server do Bankless BR DAO!",
+		"description": "Este servidor foi criado para interagir com as pessoas da DAO, segue o FAQ para tirar as dúvidas",
+		"titleImageUrl": "https://cdn.substack.com/image/fetch/w_96,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fccc4f8ab-1a57-478f-91d9-0ebb0975324f_734x734.png",
+		"titleButtons": "Bankless BR DAO Help Desk",
+		"messageButtonImage": "https://cdn.discordapp.com/attachments/884152574742237275/886325496642695268/Q_M.png"
+	},
+	"questions": [
+		{
+			"question": "O que é DAO?",
+			"answer": "DAO é vida"
+		},
+		{
+			"question": "O que é BanklessBR?",
+			"answer": "BanklessBR é uma DAO"
+		}
+	],
+	"otherOption": {
+		"question": "Nenhum das opções acima",
+		"answer": "Abra um ticket para outras dúvidas!"
+	},
+	"numberEmojis": ["965367998535860325", "965371355216347176", "965371355262484580", "965371355266691133", "965371355342200902", "965371355379933234", "965371355413483640", "965371355736453150", "965371355275100261", "965371355774193744"],
+	"numberEmojis2": ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "❔"]
+}
