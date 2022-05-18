@@ -33,6 +33,10 @@ bot.once("ready", async () => {
 			if (interaction.customId === '?') {
 				interaction.reply({content:otherOption.answer, ephemeral:true});
 			}
+			else if (Number.parseInt(interaction.customId) < 0) {
+				let menu = createFaqMenu(Number.parseInt(interaction.customId)*-1);
+				interaction.reply({embeds: menu.embeds?.slice(1), components:menu.components, ephemeral:true});
+			}
 			else {
 				interaction.reply({content:questions[interaction.customId].answer, ephemeral:true});
 			}
@@ -50,29 +54,39 @@ bot.login(BOT_TOKEN);
  * Function that creates the Faq Menu message reading from faq-config.json file all the configurations and questions
  * @returns MessageEditOptions with the content necessary to display the message and all the embeds and buttons
  */
-function createFaqMenu(): MessageEditOptions {
-	const { intro, questions, otherOption, numberEmojis }: FaqConfig = JSON.parse(fs.readFileSync('./faq-config.json', 'utf-8'));
+function createFaqMenu(offset:number = 0): MessageEditOptions {
+	const { intro, questions: questions, otherOption, numberEmojis, moreOption }: FaqConfig = JSON.parse(fs.readFileSync('./faq-config.json', 'utf-8'));
 	const buttons: MessageButton[] = [];
 	const content: string[] = [];
-	if (questions && questions.length > 0) {
+	let currentQuestions = questions;
+	if(offset > 0) {
+		currentQuestions = questions.slice(offset-1);
+	}
+	if (currentQuestions && currentQuestions.length > 0) {
 		const rows: MessageActionRow[] = [];
-		for (let i = 0; i < Math.min(questions.length, 9); i++) {
+		for (let i = 0; i < Math.min(currentQuestions.length, 9); i++) {
 			const emoji = bot.emojis.cache.get(numberEmojis[i]) || numberEmojis[i];
-			const q: Question = questions[i];
+			const q: Question = currentQuestions[i];
 			content.push(`${emoji} **${q.question}**`);
 			buttons.push(
 				new MessageButton()
 					.setEmoji(emoji)
-					.setCustomId(i.toString())
+					.setCustomId((i + offset-1).toString())
 					.setStyle("SECONDARY")
 			)
 		}
-		const questionEmoji = bot.emojis.cache.get(numberEmojis[numberEmojis.length-1]) || numberEmojis[numberEmojis.length-1];
-		content.push(`${questionEmoji} ${otherOption.question}`);
+		let anotherOption = otherOption;
+		let customId = '?';
+		if(currentQuestions.length > 9) {
+			anotherOption = moreOption;
+			customId = ((offset + 10)*-1).toString();
+		}
+		const anotherEmoji = bot.emojis.cache.get(anotherOption.emoji) || anotherOption.emoji;
+		content.push(`${anotherEmoji} ${anotherOption.question}`);
 		buttons.push(
 			new MessageButton()
-				.setEmoji(questionEmoji)
-				.setCustomId('?')
+				.setEmoji(anotherEmoji)
+				.setCustomId(customId)
 				.setStyle("PRIMARY")
 		)
 		while (buttons.length > 0) {

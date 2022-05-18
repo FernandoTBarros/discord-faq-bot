@@ -3,6 +3,11 @@ export type Question = {
 	question: string;
 	answer: string;
 }
+export type OtherOption = {
+	question: string;
+	emoji: string;
+	answer?: string;
+}
 export type FaqConfig = {
 	intro: {
 		title: string
@@ -11,7 +16,8 @@ export type FaqConfig = {
 		titleButtons: string
 		messageButtonImage: string
 	};
-	otherOption: Question
+	otherOption: OtherOption
+	moreOption: OtherOption
 	questions: Question[]
 	numberEmojis: string[]
 }

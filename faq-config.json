@@ -6,6 +6,17 @@
 		"titleButtons": "Bankless BR DAO Help Desk",
 		"messageButtonImage": "https://cdn.discordapp.com/attachments/884152574742237275/886325496642695268/Q_M.png"
 	},
+	"otherOption": {
+		"question": "Nenhum das opções acima",
+		"answer": "Abra um ticket para outras dúvidas!",
+		"emoji": "965371355774193744"
+	},
+	"moreOption": {
+		"question": "Tenho outras dúvidas, me mostre mais opções",
+		"emoji": "➕"
+	},
+	"numberEmojis": ["965367998535860325", "965371355216347176", "965371355262484580", "965371355266691133", "965371355342200902", "965371355379933234", "965371355413483640", "965371355736453150", "965371355275100261"],
+	"numberEmojis2": ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "❔"],
 	"questions": [
 		{
 			"question": "O que é DAO?",
@@ -15,11 +26,5 @@
 			"question": "O que é BanklessBR?",
 			"answer": "BanklessBR é uma DAO"
 		}
-	],
-	"otherOption": {
-		"question": "Nenhum das opções acima",
-		"answer": "Abra um ticket para outras dúvidas!"
-	},
-	"numberEmojis": ["965367998535860325", "965371355216347176", "965371355262484580", "965371355266691133", "965371355342200902", "965371355379933234", "965371355413483640", "965371355736453150", "965371355275100261", "965371355774193744"],
-	"numberEmojis2": ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣", "❔"]
+	]
 }
