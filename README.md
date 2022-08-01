@@ -1,5 +1,5 @@
 # Discord FAQ Bot
-A simple bot to send a FAQ menu on Discord server
+A simple bot to send a FAQ menu on your Discord server
 
 # Install
 1. Create a * *.env* file copying from *env.template* and put your Bot Token and Discord ID.
@@ -18,7 +18,7 @@ ADMIN_DISCORD_ID=
 # Configure
 On `faq-config.json` file there are all the available configuration options to the FAQ menu. 
 
-Fell free to change anything
+Feel free to change anything!
 
 Put the questions inside the `questions` tag array following the example:
 ```JSON
@@ -29,4 +29,4 @@ Put the questions inside the `questions` tag array following the example:
 ```
 
 # Contribute
-Fell free to contribute forking and sending your PR.
+Feel free to contribute forking and sending your PR.
